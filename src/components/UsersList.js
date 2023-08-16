@@ -1,14 +1,56 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchUsers } from '../store'
+import { useSelector } from "react-redux";
+import { fetchUsers, addUser } from '../store';
+import Button from './Button';
+import Skeleton from "./Skeleton";
+import { useThunk } from "../hooks/use-thunk";
 
 function UsersList() {
-    const dispatch = useDispatch();
+    const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers);
+    const [doAddUser, isCreatingUser, creatingUserError] = useThunk(addUser);
+
     useEffect(() => {
-        dispatch(fetchUsers())
-    }, [dispatch]);
+        doFetchUsers();
+    }, [doFetchUsers]);
+
+    const handleUserAdd = () => {
+        doAddUser();
+    }
+
+
+
+    const { data } = useSelector((state) => {
+        return state.users
+    })
+    // console.log(data.length);
+
+
+    let content;
+    if (isLoadingUsers) {
+        content = <div><Skeleton times={3} className='h-10 w-full' /></div>
+    } else if (loadingUsersError) {
+        content = <div>Error Fetching Data</div>
+    }
+    else {
+        content = data.map((user) => {
+            return <div key={user.id} className="mb-2 border rounded">
+                <div className="flex p-2 justify-between items-center cursor-pointer">{user.name}</div>
+            </div>
+        })
+    }
     return (
-        <div>UsersList</div>
+        <div>
+            <div className='flex flex-row justify-between items-center m-3'>
+                <h1 className="m-2 text-xl">Users</h1>
+                <Button loading={isCreatingUser} onClick={handleUserAdd}>
+                    + Add user
+                </Button>
+                {
+                    creatingUserError && 'error creating user'
+                }
+            </div>
+            {content}
+        </div>
     )
 }
 

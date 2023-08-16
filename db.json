@@ -1,5 +1,30 @@
 {
-  "users": [{ "id": 1, "name": "Ashwin PAII" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ashwin PAII"
+    },
+    {
+      "id": 2,
+      "name": "Manya Patel"
+    },
+    {
+      "name": "Dr. Brandon Wolf MD",
+      "id": 3
+    },
+    {
+      "name": "Billie Brown",
+      "id": 4
+    },
+    {
+      "name": "Erika Aufderhar",
+      "id": 5
+    },
+    {
+      "name": "Ms. Joanne Bayer",
+      "id": 6
+    }
+  ],
   "albums": [],
   "photos": []
 }
