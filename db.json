@@ -1,28 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ashwin PAII"
+      "name": "Tasha Miller",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Manya Patel"
+      "name": "Grant Kessler",
+      "id": 2
     },
     {
-      "name": "Dr. Brandon Wolf MD",
+      "name": "Joshua Hilpert",
       "id": 3
-    },
-    {
-      "name": "Billie Brown",
-      "id": 4
-    },
-    {
-      "name": "Erika Aufderhar",
-      "id": 5
-    },
-    {
-      "name": "Ms. Joanne Bayer",
-      "id": 6
     }
   ],
   "albums": [],
