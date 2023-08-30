@@ -1,18 +1,36 @@
 {
   "users": [
     {
-      "name": "Tasha Miller",
-      "id": 1
-    },
-    {
-      "name": "Grant Kessler",
-      "id": 2
-    },
-    {
-      "name": "Joshua Hilpert",
+      "name": "Ashwin",
       "id": 3
+    },
+    {
+      "name": "Mack Kassulke",
+      "id": 4
     }
   ],
-  "albums": [],
-  "photos": []
+  "albums": [
+    {
+      "userId": 3,
+      "title": "Practical Frozen Salad",
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "title": "Fantastic Cotton Cheese",
+      "id": 4
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/x8no0m/128/128",
+      "id": 4
+    },
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/dBltzI/128/128",
+      "id": 5
+    }
+  ]
 }
